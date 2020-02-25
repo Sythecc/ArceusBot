@@ -109,25 +109,28 @@ client.on("message", message => {
 		}
 	}
 	if (command === "badges") {
-		badgesString = "";
+		badgesString = "<@"+`${message.author.id}`+">s Badges :";
+		badgesString+="\n╔═══════════════════";
 		badgesArray = badges.badge.split(" ");
+		
 		for (i = 0; i < badgesArray.length; i++) {
 			switch(badgesArray[i]){
 				case("None"):
-					badgesString+= "\n\n*No badges :sademote:";
+					badgesString+= "\n║\n╠No badges :sademote:";
 					break;
 				case("Fire"):
-					badgesString+= "\n\n*Fire badge :emote:";
+					badgesString+= "\n║\n╠Fire badge :emote:";
 					break;
 				case("Water"):
-					badgesString+= "\n\n*Water badge :emote:";
+					badgesString+= "\n║\n╠Water badge :emote:";
 					break;
 				case("Rock"):
-					badgesString+= "\n\n*Rock badge :emote:";
+					badgesString+= "\n║\n╠Rock badge :emote:";
 					break;
 			}
 		}
-		return message.channel.send(`<@${message.author.id}>'s Badges :` + badgesString);
+		badgesString+="\n║\n╚═══════════════════"
+		return message.channel.send(badgesString);
 	}
 	if (command === "help") {
 		var helpList = 'here are the commands:\n**Normal Commands**' +
