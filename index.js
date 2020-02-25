@@ -53,16 +53,20 @@ client.on("message", message => {
 						badges = { id: `${message.guild.id}-${mentionedUser.id}`, user: mentionedUser.id, guild: message.guild.id, badge: badgeName }
 					} else {
 						var newBadges = previousBadges.badge.split(" ");
-						newBadges.push(badgeName);
-						newBadges.sort();
-						let newBadgesString = newBadges[0].toString();
-						for (i = 1; i < newBadges.length; i++) {
-							newBadgesString += " " + newBadges[i].toString();
+						if (!newBadges.includes(badgeName)) {
+							newBadges.push(badgeName);
+							newBadges.sort();
+							let newBadgesString = newBadges[0].toString();
+							for (i = 1; i < newBadges.length; i++) {
+								newBadgesString += " " + newBadges[i].toString();
+							}
+							badges = { id: `${message.guild.id}-${mentionedUser.id}`, user: mentionedUser.id, guild: message.guild.id, badge: `${newBadgesString}` }
+							client.setBadges.run(badges);
+							message.channel.send("Successfully added " + badgeName + " badge to <@" + mentionedUser.id + ">");
+						} else {
+							message.channel.send("<@" + mentionedUser.id + "> already has " + badgeName + " badge");
 						}
-						badges = { id: `${message.guild.id}-${mentionedUser.id}`, user: mentionedUser.id, guild: message.guild.id, badge: `${newBadgesString}` }
 					}
-					client.setBadges.run(badges);
-					message.channel.send("Successfully added " + badgeName + " badge to <@" + mentionedUser.id + ">");
 				} else {
 					message.channel.send(badgeName + " is not the name of a badge");
 				}
@@ -91,7 +95,7 @@ client.on("message", message => {
 						} else {
 							flag = true;
 						}
-						if(!newBadgesString){
+						if (!newBadgesString) {
 							newBadgesString = "None";
 						}
 					}
@@ -109,41 +113,67 @@ client.on("message", message => {
 		}
 	}
 	if (command === "badges") {
-		badgesString = "<@"+`${message.author.id}`+">s Badges :";
-		badgesString+="\n╔═══════════════════";
+		const badgesEmbed = new Discord.RichEmbed()
+			.setColor('#FF0000')
+			.setTitle(message.member.nickname + "'s Badges :")
+			.setThumbnail(message.author.avatarURL)
+			.setTimestamp()
+			.setFooter('Created by Arceus#5253');
+		//badgesString = "<@"+`${message.author.id}`+">s Badges :";
+		//badgesString+="\n╔═══════════════════";
 		badgesArray = badges.badge.split(" ");
-		
+
 		for (i = 0; i < badgesArray.length; i++) {
-			switch(badgesArray[i]){
-				case("None"):
-					badgesString+= "\n║\n╠No badges :sademote:";
+			switch (badgesArray[i]) {
+				case ("None"):
+					//badgesString+= "\n║\n╠No badges :sademote:";
+					badgesEmbed.addField('No Badges', "sadness");
 					break;
-				case("Fire"):
-					badgesString+= "\n║\n╠Fire badge :emote:";
+				case ("Fire"):
+					//badgesString+= "\n║\n╠Fire badge :emote:";
+					badgesEmbed.addField('Fire badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
-				case("Water"):
-					badgesString+= "\n║\n╠Water badge :emote:";
+				case ("Water"):
+					//badgesString+= "\n║\n╠Water badge :emote:";
+					badgesEmbed.addField('Water badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
-				case("Rock"):
-					badgesString+= "\n║\n╠Rock badge :emote:";
+				case ("Rock"):
+					//badgesString+= "\n║\n╠Rock badge :emote:";
+					badgesEmbed.addField('Rock badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
 			}
+			if (i % 2) {
+				badgesEmbed.addBlankField(true);
+			}
 		}
-		badgesString+="\n║\n╚═══════════════════"
-		return message.channel.send(badgesString);
+		//badgesString+="\n║\n╚═══════════════════"
+		return message.channel.send(badgesEmbed);
 	}
 	if (command === "help") {
-		var helpList = 'here are the commands:\n**Normal Commands**' +
-			'\ns!help - this menu' +
-			'\ns!gyminfo - information about the gyms!' +
-			'\ns![type]gym - info on a particular gym!' +
-			'\ns!badges - Shows you your badges!';
+		const helpEmbeded = new Discord.RichEmbed()
+			.setColor('#0099ff')
+			.setTitle("Command List")
+			.setThumbnail(client.avatarURL)
+			.setTimestamp()
+			.setFooter('Created by Arceus#5253')
+			.addField("s!help","This menu!")
+			.addField("s!gyminfo","Information about the gyms!")
+			.addField("s![type]gym","Information on a particular gym!")
+			.addField("s!badges","Shows you your badges!");
+		//var helpList = 'here are the commands:\n**Normal Commands**' +
+		//	'\ns!help - this menu' +
+		//	'\ns!gyminfo - information about the gyms!' +
+		//	'\ns![type]gym - info on a particular gym!' +
+		//	'\ns!badges - Shows you your badges!';
 		if (message.member.roles.find(r => r.name === "Admin")) {
-			helpList += '\n**Admin Commands**' +
-				'\n*s!givebadge @[person] [Typeofbadge]*' +
-				'\n*s!removebadge @[person] [Typeofbadge]*';
+		//	helpList += '\n**Admin Commands**' +
+		//		'\n*s!givebadge @[person] [Typeofbadge]*' +
+		//		'\n*s!removebadge @[person] [Typeofbadge]*';
+			helpEmbeded.addField("**ADMIN COMMANDS**", "--------------------------")
+			helpEmbeded.addField("s!givebadge @[person] [Typeofbadge]", "Use to add badges to challengers.")
+			helpEmbeded.addField("s!removebadge @[person] [Typeofbadge]", "Use to revoke badges from challengers.")
 		}
-		return message.reply(helpList);
+		return message.channel.send(helpEmbeded);
 	}
 	if (command === "gyminfo") {
 		return message.channel.send('Fire Gym Leader : <@131233565303242752>' +
