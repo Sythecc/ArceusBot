@@ -38,7 +38,8 @@ client.on("message", message => {
 	const command = args.shift().toLowerCase();
 	// Commands
 	if (command == "givebadge") {
-		if (message.member.roles.find(r => r.name === "Admin")) {
+		if (message.member.roles.find(r => r.name === "Admin" ||
+		 r.name === "Owner" || r.name === "Admin in Training")) {
 			let badges;
 			const mentionedUser = message.mentions.users.first();
 			msgArray = message.content.split(" ");
@@ -71,11 +72,14 @@ client.on("message", message => {
 					message.channel.send(badgeName + " is not the name of a badge");
 				}
 			}
+		}else{
+			message.channel.send("Only Admins can use this command.")
 		}
 	}
 
 	if (command == "removebadge") {
-		if (message.member.roles.find(r => r.name === "Admin")) {
+		if (message.member.roles.find(r => r.name === "Admin" ||
+		 r.name === "Owner" || r.name === "Admin in Training")) {
 			let badges;
 			var newBadges = [];
 			const mentionedUser = message.mentions.users.first();
@@ -110,6 +114,8 @@ client.on("message", message => {
 					message.channel.send(badgeName + " is not the name of a badge");
 				}
 			}
+		}else{
+			message.channel.send("Only Admins can use this command.")
 		}
 	}
 	if (command === "badges") {
@@ -165,7 +171,8 @@ client.on("message", message => {
 		//	'\ns!gyminfo - information about the gyms!' +
 		//	'\ns![type]gym - info on a particular gym!' +
 		//	'\ns!badges - Shows you your badges!';
-		if (message.member.roles.find(r => r.name === "Admin")) {
+		if (message.member.roles.find(r => r.name === "Admin" ||
+		 r.name === "Owner" || r.name === "Admin in Training")) {
 		//	helpList += '\n**Admin Commands**' +
 		//		'\n*s!givebadge @[person] [Typeofbadge]*' +
 		//		'\n*s!removebadge @[person] [Typeofbadge]*';
@@ -176,15 +183,30 @@ client.on("message", message => {
 		return message.channel.send(helpEmbeded);
 	}
 	if (command === "gyminfo") {
-		return message.channel.send('Fire Gym Leader : <@131233565303242752>' +
-			'\nGym Leader : <@>' +
-			'\nGym Leader : <@>' +
-			'\nGym Leader : <@>' +
-			'\nGym Leader : <@>' +
-			'\nGym Leader : <@>' +
-			'\nGym Leader : <@>' +
-			'\nGym Leader : <@>' +
-			'\nDo s![type]gym to have more info on that particular gym!');
+		const gymInfoEmbeded = new Discord.RichEmbed()
+			.setColor('#0099ff')
+			.setTitle("Gym Leaders")
+			.setThumbnail(client.avatarURL)
+			.setTimestamp()
+			.setFooter('Created by Arceus#5253')
+			.addField('Fire Gym Leader : <@131233565303242752>')
+			.addField('Gym Leader : <@>')
+			.addField('Gym Leader : <@>')
+			.addField('Gym Leader : <@>')
+			.addField('Gym Leader : <@>')
+			.addField('Gym Leader : <@>')
+			.addField('Gym Leader : <@>')
+			.addField('Gym Leader : <@>');
+		return message.channel.send(gymInfoEmbeded);
+		// return message.channel.send('Fire Gym Leader : <@131233565303242752>' +
+		// 	'\nGym Leader : <@>' +
+		// 	'\nGym Leader : <@>' +
+		// 	'\nGym Leader : <@>' +
+		// 	'\nGym Leader : <@>' +
+		// 	'\nGym Leader : <@>' +
+		// 	'\nGym Leader : <@>' +
+		// 	'\nGym Leader : <@>' +
+		// 	'\nDo s![type]gym to have more info on that particular gym!');
 	}
 	if (command === "firegym") {
 		return message.channel.send('Fire Gym Leader : <@131233565303242752>\n**BROOO THIS SOME SICK INFO** <:soslowpoke:669689130342416385>');
