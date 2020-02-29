@@ -6,7 +6,7 @@ const sql = new SQLite('./badges.sqlite');
 const badgeList = ["Fire", "Water", "Rock"];
 
 client.on("ready", () => {
-	// Check if the table "points" exists.
+	// Check if the table "badges" exists.
 	const table = sql.prepare("SELECT count(*) FROM sqlite_master WHERE type='table' AND name = 'badges';").get();
 	if (!table['count(*)']) {
 		// If the table isn't there, create it and setup the database correctly.
@@ -125,26 +125,20 @@ client.on("message", message => {
 			.setThumbnail(message.author.avatarURL)
 			.setTimestamp()
 			.setFooter('Created by Arceus#5253');
-		//badgesString = "<@"+`${message.author.id}`+">s Badges :";
-		//badgesString+="\n╔═══════════════════";
 		badgesArray = badges.badge.split(" ");
 
 		for (i = 0; i < badgesArray.length; i++) {
 			switch (badgesArray[i]) {
 				case ("None"):
-					//badgesString+= "\n║\n╠No badges :sademote:";
 					badgesEmbed.addField('No Badges', "sadness");
 					break;
 				case ("Fire"):
-					//badgesString+= "\n║\n╠Fire badge :emote:";
 					badgesEmbed.addField('Fire badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
 				case ("Water"):
-					//badgesString+= "\n║\n╠Water badge :emote:";
 					badgesEmbed.addField('Water badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
 				case ("Rock"):
-					//badgesString+= "\n║\n╠Rock badge :emote:";
 					badgesEmbed.addField('Rock badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
 			}
@@ -152,7 +146,6 @@ client.on("message", message => {
 				badgesEmbed.addBlankField(true);
 			}
 		}
-		//badgesString+="\n║\n╚═══════════════════"
 		return message.channel.send(badgesEmbed);
 	}
 	if (command === "help") {
@@ -165,16 +158,8 @@ client.on("message", message => {
 			.addField("s!help", "This menu!")
 			.addField("s!gyminfo", "Information about the gyms!")
 			.addField("s!badges", "Shows you your badges!");
-		//var helpList = 'here are the commands:\n**Normal Commands**' +
-		//	'\ns!help - this menu' +
-		//	'\ns!gyminfo - information about the gyms!' +
-		//	'\ns![type]gym - info on a particular gym!' +
-		//	'\ns!badges - Shows you your badges!';
 		if (message.member.roles.find(r => r.name === "Admin" ||
 			r.name === "Owner" || r.name === "Admin in Training")) {
-			//	helpList += '\n**Admin Commands**' +
-			//		'\n*s!givebadge @[person] [Typeofbadge]*' +
-			//		'\n*s!removebadge @[person] [Typeofbadge]*';
 			helpEmbeded.addField("**ADMIN COMMANDS**", "--------------------------")
 			helpEmbeded.addField("s!givebadge @[person] [Typeofbadge]", "Use to add badges to challengers.")
 			helpEmbeded.addField("s!removebadge @[person] [Typeofbadge]", "Use to revoke badges from challengers.")
@@ -205,17 +190,6 @@ client.on("message", message => {
 			// freethoughtisalie#9132 is ice
 			.addField('Fire Gym Leader :', "<@!531698462643716106> Time(s) Avalible : TBD Badge : TBD");
 		return message.channel.send(gymInfoEmbeded);
-		// return message.channel.send('Fire Gym Leader : <@131233565303242752>' +
-		// 	'\nGym Leader : <@>' +
-		// 	'\nGym Leader : <@>' +
-		// 	'\nGym Leader : <@>' +
-		// 	'\nGym Leader : <@>' +
-		// 	'\nGym Leader : <@>' +
-		// 	'\nGym Leader : <@>' +
-		// 	'\nGym Leader : <@>' +
-		// 	'\nDo s![type]gym to have more info on that particular gym!');
 	}
 });
-
-//test
 client.login(config.token);
