@@ -39,7 +39,7 @@ client.on("message", message => {
 	// Commands
 	if (command == "givebadge") {
 		if (message.member.roles.find(r => r.name === "Admin" ||
-		 r.name === "Owner" || r.name === "Admin in Training")) {
+			r.name === "Owner" || r.name === "Admin in Training")) {
 			let badges;
 			const mentionedUser = message.mentions.users.first();
 			msgArray = message.content.split(" ");
@@ -72,14 +72,14 @@ client.on("message", message => {
 					message.channel.send(badgeName + " is not the name of a badge");
 				}
 			}
-		}else{
+		} else {
 			message.channel.send("Only Admins can use this command.")
 		}
 	}
 
 	if (command == "removebadge") {
 		if (message.member.roles.find(r => r.name === "Admin" ||
-		 r.name === "Owner" || r.name === "Admin in Training")) {
+			r.name === "Owner" || r.name === "Admin in Training")) {
 			let badges;
 			var newBadges = [];
 			const mentionedUser = message.mentions.users.first();
@@ -114,7 +114,7 @@ client.on("message", message => {
 					message.channel.send(badgeName + " is not the name of a badge");
 				}
 			}
-		}else{
+		} else {
 			message.channel.send("Only Admins can use this command.")
 		}
 	}
@@ -162,20 +162,19 @@ client.on("message", message => {
 			.setThumbnail(client.avatarURL)
 			.setTimestamp()
 			.setFooter('Created by Arceus#5253')
-			.addField("s!help","This menu!")
-			.addField("s!gyminfo","Information about the gyms!")
-			.addField("s![type]gym","Information on a particular gym!")
-			.addField("s!badges","Shows you your badges!");
+			.addField("s!help", "This menu!")
+			.addField("s!gyminfo", "Information about the gyms!")
+			.addField("s!badges", "Shows you your badges!");
 		//var helpList = 'here are the commands:\n**Normal Commands**' +
 		//	'\ns!help - this menu' +
 		//	'\ns!gyminfo - information about the gyms!' +
 		//	'\ns![type]gym - info on a particular gym!' +
 		//	'\ns!badges - Shows you your badges!';
 		if (message.member.roles.find(r => r.name === "Admin" ||
-		 r.name === "Owner" || r.name === "Admin in Training")) {
-		//	helpList += '\n**Admin Commands**' +
-		//		'\n*s!givebadge @[person] [Typeofbadge]*' +
-		//		'\n*s!removebadge @[person] [Typeofbadge]*';
+			r.name === "Owner" || r.name === "Admin in Training")) {
+			//	helpList += '\n**Admin Commands**' +
+			//		'\n*s!givebadge @[person] [Typeofbadge]*' +
+			//		'\n*s!removebadge @[person] [Typeofbadge]*';
 			helpEmbeded.addField("**ADMIN COMMANDS**", "--------------------------")
 			helpEmbeded.addField("s!givebadge @[person] [Typeofbadge]", "Use to add badges to challengers.")
 			helpEmbeded.addField("s!removebadge @[person] [Typeofbadge]", "Use to revoke badges from challengers.")
@@ -189,14 +188,22 @@ client.on("message", message => {
 			.setThumbnail(client.avatarURL)
 			.setTimestamp()
 			.setFooter('Created by Arceus#5253')
-			.addField('Fire Gym Leader : <@131233565303242752>')
-			.addField('Gym Leader : <@>')
-			.addField('Gym Leader : <@>')
-			.addField('Gym Leader : <@>')
-			.addField('Gym Leader : <@>')
-			.addField('Gym Leader : <@>')
-			.addField('Gym Leader : <@>')
-			.addField('Gym Leader : <@>');
+			// CanaanTE#8564 the grass gym leader hasn’t responded to me
+			.addField('Grass Gym Leader : <@!355022839730012161>', "Time(s) Avalible : TBD Badge : TBD")
+			// LordXbox420#4207 is bug 
+			.addField('Bug Gym Leader : <@!419671144912650260>', "Time(s) Avalible : TBD Badge : TBD")
+			// just here#5407 is doubles sandstorm
+			.addField('Doubless Sandstorm Gym Leader : <@!664187773955080203>', "Time(s) Avalible : TBD Badge : TBD")
+			// Skribblette:crescent_moon:#9523 is fairy 
+			.addField('Fairy Gym Leader : <@!347952125315252225>', "Time(s) Avalible : TBD Badge : TBD")
+			// TheeMaxZee#4348 is fire 
+			.addField('Fire Gym Leader : <@!503486299030945803>', "Time(s) Avalible : TBD Badge : TBD")
+			// {Glitchfox}#4971 is dragon
+			.addField('Fire Gym Leader : <@!472568934621511691>', "Time(s) Avalible : TBD Badge : TBD")
+			// Yujio#3923 is dark
+			.addField('Fire Gym Leader : <@!435551482851622924>', "Time(s) Avalible : TBD Badge : TBD")
+			// freethoughtisalie#9132 is ice
+			.addField('Fire Gym Leader : <@!531698462643716106>', "Time(s) Avalible : TBD Badge : TBD");
 		return message.channel.send(gymInfoEmbeded);
 		// return message.channel.send('Fire Gym Leader : <@131233565303242752>' +
 		// 	'\nGym Leader : <@>' +
@@ -207,9 +214,6 @@ client.on("message", message => {
 		// 	'\nGym Leader : <@>' +
 		// 	'\nGym Leader : <@>' +
 		// 	'\nDo s![type]gym to have more info on that particular gym!');
-	}
-	if (command === "firegym") {
-		return message.channel.send('Fire Gym Leader : <@131233565303242752>\n**BROOO THIS SOME SICK INFO** <:soslowpoke:669689130342416385>');
 	}
 });
 
