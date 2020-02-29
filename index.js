@@ -193,9 +193,9 @@ client.on("message", message => {
 			// LordXbox420#4207 is bug 
 			.addField('Bug Gym Leader :', "<@!419671144912650260> Time(s) Avalible : TBD Badge : TBD")
 			// just here#5407 is doubles sandstorm
-			.addField('Doubless Sandstorm Gym Leader :', "<@!664187773955080203> Time(s) Avalible : TBD Badge : TBD")
+			.addField('Doubles Sandstorm Gym Leader :', "<@!664187773955080203> Time(s) Avalible : TBD Badge : TBD")
 			// Skribblette:crescent_moon:#9523 is fairy 
-			.addField('Fairy Gym Leader :', "<@!347952125315252225> Time(s) Avalible : TBD Badge : TBD")
+			.addField('Doubles Fairy Gym Leader :', "<@!347952125315252225> Time(s) Avalible : TBD Badge : TBD")
 			// TheeMaxZee#4348 is fire 
 			.addField('Fire Gym Leader :', "<@!503486299030945803> Time(s) Avalible : TBD Badge : TBD")
 			// {Glitchfox}#4971 is dragon
