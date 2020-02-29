@@ -48,6 +48,9 @@ client.on("message", message => {
 			}
 			else {
 				badgeName = msgArray[2].substring(0, 1).toUpperCase() + msgArray[2].substring(1).toLowerCase();
+				if (msgArray.size() > 2) {
+					badgeName += badgeName = msgArray[3].substring(0, 1).toUpperCase() + msgArray[3].substring(1).toLowerCase();
+				}
 				if (badgeList.includes(badgeName)) {
 					previousBadges = client.getBadges.get(mentionedUser.id, message.guild.id);
 					if (`${previousBadges.badge}` === "None") {
