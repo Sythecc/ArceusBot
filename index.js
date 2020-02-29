@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const SQLite = require("better-sqlite3");
 const sql = new SQLite('./badges.sqlite');
-const badgeList = ["Grass", "Bug", "Doubles sandstorm", "Doubles fairy", "Fire", "Dragon", "Dark", "Ice"];
+const badgeList = ["Grass", "Bug", "Doublessandstorm", "Doublesfairy", "Fire", "Dragon", "Dark", "Ice"];
 
 client.on("ready", () => {
 	// Check if the table "badges" exists.
@@ -48,9 +48,6 @@ client.on("message", message => {
 			}
 			else {
 				badgeName = msgArray[2].substring(0, 1).toUpperCase() + msgArray[2].substring(1).toLowerCase();
-				if (msgArray.length > 2) {
-					badgeName += badgeName = " " + msgArray[3].toLowerCase();
-				}
 				if (badgeList.includes(badgeName)) {
 					previousBadges = client.getBadges.get(mentionedUser.id, message.guild.id);
 					if (`${previousBadges.badge}` === "None") {
@@ -144,10 +141,10 @@ client.on("message", message => {
 				case ("Bug"):
 					badgesEmbed.addField('Bug badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
-				case ("Doubles sandstorm"):
+				case ("Doublessandstorm"):
 					badgesEmbed.addField('Doubles Sandstorm badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
-				case ("Doubles fairy"):
+				case ("Doublesfairy"):
 					badgesEmbed.addField('Doubles Fairy badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
 				case ("Fire"):
