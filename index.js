@@ -51,8 +51,9 @@ client.on("message", message => {
 				if (badgeList.includes(badgeName)) {
 					previousBadges = client.getBadges.get(mentionedUser.id, message.guild.id);
 					if (`${previousBadges.badge}` === "None") {
-						message.channel.send("id: `${message.guild.id}-${mentionedUser.id}`, user: mentionedUser.id, guild: message.guild.id, badge:"+ `${badgeName}`);
 						badges = { id: `${message.guild.id}-${mentionedUser.id}`, user: mentionedUser.id, guild: message.guild.id, badge: `${badgeName}` }
+						client.setBadges.run(badges);
+						message.channel.send("Successfully added " + badgeName + " badge to <@" + mentionedUser.id + ">");
 					} else {
 						var newBadges = previousBadges.badge.split(" ");
 						if (!newBadges.includes(badgeName)) {
