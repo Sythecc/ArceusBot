@@ -189,21 +189,21 @@ client.on("message", message => {
 			.setTimestamp()
 			.setFooter('Created by Arceus#5253')
 			// CanaanTE#8564 the grass gym leader hasn’t responded to me
-			.addField('Grass Gym Leader : <@!355022839730012161>', "Time(s) Avalible : TBD Badge : TBD")
+			.addField('Grass Gym Leader :', "<@!355022839730012161> Time(s) Avalible : TBD Badge : TBD")
 			// LordXbox420#4207 is bug 
-			.addField('Bug Gym Leader : <@!419671144912650260>', "Time(s) Avalible : TBD Badge : TBD")
+			.addField('Bug Gym Leader :', "<@!419671144912650260> Time(s) Avalible : TBD Badge : TBD")
 			// just here#5407 is doubles sandstorm
-			.addField('Doubless Sandstorm Gym Leader : <@!664187773955080203>', "Time(s) Avalible : TBD Badge : TBD")
+			.addField('Doubless Sandstorm Gym Leader :', "<@!664187773955080203> Time(s) Avalible : TBD Badge : TBD")
 			// Skribblette:crescent_moon:#9523 is fairy 
-			.addField('Fairy Gym Leader : <@!347952125315252225>', "Time(s) Avalible : TBD Badge : TBD")
+			.addField('Fairy Gym Leader :', "<@!347952125315252225> Time(s) Avalible : TBD Badge : TBD")
 			// TheeMaxZee#4348 is fire 
-			.addField('Fire Gym Leader : <@!503486299030945803>', "Time(s) Avalible : TBD Badge : TBD")
+			.addField('Fire Gym Leader :', "<@!503486299030945803> Time(s) Avalible : TBD Badge : TBD")
 			// {Glitchfox}#4971 is dragon
-			.addField('Fire Gym Leader : <@!472568934621511691>', "Time(s) Avalible : TBD Badge : TBD")
+			.addField('Fire Gym Leader :', "<@!472568934621511691> Time(s) Avalible : TBD Badge : TBD")
 			// Yujio#3923 is dark
-			.addField('Fire Gym Leader : <@!435551482851622924>', "Time(s) Avalible : TBD Badge : TBD")
+			.addField('Fire Gym Leader :', "<@!435551482851622924> Time(s) Avalible : TBD Badge : TBD")
 			// freethoughtisalie#9132 is ice
-			.addField('Fire Gym Leader : <@!531698462643716106>', "Time(s) Avalible : TBD Badge : TBD");
+			.addField('Fire Gym Leader :', "<@!531698462643716106> Time(s) Avalible : TBD Badge : TBD");
 		return message.channel.send(gymInfoEmbeded);
 		// return message.channel.send('Fire Gym Leader : <@131233565303242752>' +
 		// 	'\nGym Leader : <@>' +
