@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const SQLite = require("better-sqlite3");
 const sql = new SQLite('./badges.sqlite');
-const badgeList = ["Grass", "Bug", "Doubles Sandstorm","Doubles Fairy", "Fire", "Dragon","Dark","Ice"];
+const badgeList = ["Grass", "Bug", "Doubles sandstorm","Doubles fairy", "Fire", "Dragon","Dark","Ice"];
 
 client.on("ready", () => {
 	// Check if the table "badges" exists.
@@ -51,7 +51,7 @@ client.on("message", message => {
 				if (badgeList.includes(badgeName)) {
 					previousBadges = client.getBadges.get(mentionedUser.id, message.guild.id);
 					if (`${previousBadges.badge}` === "None") {
-						badges = { id: `${message.guild.id}-${mentionedUser.id}`, user: mentionedUser.id, guild: message.guild.id, badge: badgeName }
+						badges = { id: `${message.guild.id}-${mentionedUser.id}`, user: mentionedUser.id, guild: message.guild.id, badge: `${badgeName}` }
 					} else {
 						var newBadges = previousBadges.badge.split(" ");
 						if (!newBadges.includes(badgeName)) {
@@ -139,10 +139,10 @@ client.on("message", message => {
 				case ("Bug"):
 					badgesEmbed.addField('Bug badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
-				case ("Doubles Sandstorm"):
+				case ("Doubles sandstorm"):
 					badgesEmbed.addField('Doubles Sandstorm badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
-				case ("Doubles Fairy"):
+				case ("Doubles fairy"):
 					badgesEmbed.addField('Doubles Fairy badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
 				case ("Fire"):
