@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const SQLite = require("better-sqlite3");
 const sql = new SQLite('./badges.sqlite');
-const badgeList = ["Fire", "Water", "Rock"];
+const badgeList = ["Grass", "Bug", "Doubles Sandstorm","Doubles Fairy", "Fire", "Dragon","Dark","Ice"];
 
 client.on("ready", () => {
 	// Check if the table "badges" exists.
@@ -128,18 +128,34 @@ client.on("message", message => {
 		badgesArray = badges.badge.split(" ");
 
 		for (i = 0; i < badgesArray.length; i++) {
+			//const badgeList = ["Grass", "Bug", "Doubles Sandstorm","Doubles Fairy", "Fire", "Dragon","Dark","Ice"];
 			switch (badgesArray[i]) {
 				case ("None"):
 					badgesEmbed.addField('No Badges', "sadness");
 					break;
+				case ("Grass"):
+					badgesEmbed.addField('Grass badge', "<:RowletFacepalm:670041359788408832>", true);
+					break;
+				case ("Bug"):
+					badgesEmbed.addField('Bug badge', "<:RowletFacepalm:670041359788408832>", true);
+					break;
+				case ("Doubles Sandstorm"):
+					badgesEmbed.addField('Doubles Sandstorm badge', "<:RowletFacepalm:670041359788408832>", true);
+					break;
+				case ("Doubles Fairy"):
+					badgesEmbed.addField('Doubles Fairy badge', "<:RowletFacepalm:670041359788408832>", true);
+					break;
 				case ("Fire"):
 					badgesEmbed.addField('Fire badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
-				case ("Water"):
-					badgesEmbed.addField('Water badge', "<:RowletFacepalm:670041359788408832>", true);
+				case ("Dragon"):
+					badgesEmbed.addField('Dragon badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
-				case ("Rock"):
-					badgesEmbed.addField('Rock badge', "<:RowletFacepalm:670041359788408832>", true);
+				case ("Dark"):
+					badgesEmbed.addField('Dark badge', "<:RowletFacepalm:670041359788408832>", true);
+					break;
+				case ("Ice"):
+					badgesEmbed.addField('Ice badge', "<:RowletFacepalm:670041359788408832>", true);
 					break;
 			}
 			if (i % 2) {
@@ -184,11 +200,11 @@ client.on("message", message => {
 			// TheeMaxZee#4348 is fire 
 			.addField('Fire Gym Leader :', "<@!503486299030945803> Time(s) Avalible : TBD Badge : TBD")
 			// {Glitchfox}#4971 is dragon
-			.addField('Fire Gym Leader :', "<@!472568934621511691> Time(s) Avalible : TBD Badge : TBD")
+			.addField('Dragon Gym Leader :', "<@!472568934621511691> Time(s) Avalible : TBD Badge : TBD")
 			// Yujio#3923 is dark
-			.addField('Fire Gym Leader :', "<@!435551482851622924> Time(s) Avalible : TBD Badge : TBD")
+			.addField('Dark Gym Leader :', "<@!435551482851622924> Time(s) Avalible : TBD Badge : TBD")
 			// freethoughtisalie#9132 is ice
-			.addField('Fire Gym Leader :', "<@!531698462643716106> Time(s) Avalible : TBD Badge : TBD");
+			.addField('Ice Gym Leader :', "<@!531698462643716106> Time(s) Avalible : TBD Badge : TBD");
 		return message.channel.send(gymInfoEmbeded);
 	}
 });
