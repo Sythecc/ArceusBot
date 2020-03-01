@@ -136,7 +136,7 @@ client.on("message", message => {
 			.setFooter('Created by Arceus#5253');
 		badgesArray = badges.badge.split(" ");
 		if(!message.member.nickname){
-			badgesEmbed.setTitle(message.author.name+ "'s Badges :");
+			badgesEmbed.setTitle(message.author.username+ "'s Badges :");
 		}
 		for (i = 0; i < badgesArray.length; i++) {
 			//const badgeList = ["Grass", "Bug", "Doubles Sandstorm","Doubles Fairy", "Fire", "Dragon","Dark","Ice"];
