@@ -6,6 +6,13 @@ const sql = new SQLite('./badges.sqlite');
 const badgeList = ["Grass", "Bug", "Doublessandstorm", "Doublesfairy", "Fire", "Dragon", "Dark", "Ice"];
 
 client.on("ready", () => {
+	client.user.setStatus('available');
+    client.user.setPresence({
+        game: {
+            name: 's!help to get started',
+            type: "ONLINE",
+		}
+    });
 	// Check if the table "badges" exists.
 	const table = sql.prepare("SELECT count(*) FROM sqlite_master WHERE type='table' AND name = 'badges';").get();
 	if (!table['count(*)']) {
@@ -128,7 +135,9 @@ client.on("message", message => {
 			.setTimestamp()
 			.setFooter('Created by Arceus#5253');
 		badgesArray = badges.badge.split(" ");
-
+		if(!message.member.nickname){
+			badgesEmbed.setTitle(message.author.name+ "'s Badges :");
+		}
 		for (i = 0; i < badgesArray.length; i++) {
 			//const badgeList = ["Grass", "Bug", "Doubles Sandstorm","Doubles Fairy", "Fire", "Dragon","Dark","Ice"];
 			switch (badgesArray[i]) {
