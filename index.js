@@ -133,31 +133,31 @@ client.on("message", message => {
 			//const badgeList = ["Grass", "Bug", "Doubles Sandstorm","Doubles Fairy", "Fire", "Dragon","Dark","Ice"];
 			switch (badgesArray[i]) {
 				case ("None"):
-					badgesEmbed.addField('No Badges', "sadness");
+					badgesEmbed.addField('No Badges', "<:emptyBadge:683491161717211147>");
 					break;
 				case ("Grass"):
-					badgesEmbed.addField('Grass badge', "<:RowletFacepalm:670041359788408832>", true);
+					badgesEmbed.addField('Grass badge', "<:emptyBadge:683491161717211147>", true);
 					break;
 				case ("Bug"):
-					badgesEmbed.addField('Bug badge', "<:RowletFacepalm:670041359788408832>", true);
+					badgesEmbed.addField('Bug badge', "<:emptyBadge:683491161717211147>", true);
 					break;
 				case ("Doublessandstorm"):
-					badgesEmbed.addField('Doubles Sandstorm badge', "<:RowletFacepalm:670041359788408832>", true);
+					badgesEmbed.addField('Doubles Sandstorm badge', "<:emptyBadge:683491161717211147>", true);
 					break;
 				case ("Doublesfairy"):
-					badgesEmbed.addField('Doubles Fairy badge', "<:RowletFacepalm:670041359788408832>", true);
+					badgesEmbed.addField('Doubles Fairy badge', "<:emptyBadge:683491161717211147>", true);
 					break;
 				case ("Fire"):
-					badgesEmbed.addField('Fire badge', "<:RowletFacepalm:670041359788408832>", true);
+					badgesEmbed.addField('Fire badge', "<:emptyBadge:683491161717211147>", true);
 					break;
 				case ("Dragon"):
-					badgesEmbed.addField('Dragon badge', "<:RowletFacepalm:670041359788408832>", true);
+					badgesEmbed.addField('Dragon badge', "<:emptyBadge:683491161717211147>", true);
 					break;
 				case ("Dark"):
-					badgesEmbed.addField('Dark badge', "<:RowletFacepalm:670041359788408832>", true);
+					badgesEmbed.addField('Dark badge', "<:emptyBadge:683491161717211147>", true);
 					break;
 				case ("Ice"):
-					badgesEmbed.addField('Ice badge', "<:RowletFacepalm:670041359788408832>", true);
+					badgesEmbed.addField('Ice badge', "<:emptyBadge:683491161717211147>", true);
 					break;
 			}
 			if (i % 2) {
@@ -192,21 +192,21 @@ client.on("message", message => {
 			.setTimestamp()
 			.setFooter('Created by Arceus#5253')
 			// CanaanTE#8564 the grass gym leader hasn’t responded to me
-			.addField('Grass Gym Leader :', "<@!355022839730012161> Time(s) Avalible : TBD Badge : TBD")
+			.addField('Grass Gym Leader :', "<@!355022839730012161> Time(s) Avalible : TBD \nBadge : <:emptyBadge:683491161717211147>")
 			// LordXbox420#4207 is bug 
-			.addField('Bug Gym Leader :', "<@!419671144912650260> Time(s) Avalible : TBD Badge : TBD")
+			.addField('Bug Gym Leader :', "<@!419671144912650260> Time(s) Avalible : Monday-Friday 4PM-8:30PM PST \nBadge : <:emptyBadge:683491161717211147>")
 			// just here#5407 is doubles sandstorm
-			.addField('Doubles Sandstorm Gym Leader :', "<@!664187773955080203> Time(s) Avalible : TBD Badge : TBD")
+			.addField('Doubles Sandstorm Gym Leader :', "<@!664187773955080203> Time(s) Avalible : Monday after 3PM, Tuesday after 6PM, Thursday after 7PM, Friday after 6:50PM, Saturday after 4PM, Sunday after 4PM \nBadge : <:emptyBadge:683491161717211147>")
 			// Skribblette:crescent_moon:#9523 is fairy 
-			.addField('Doubles Fairy Gym Leader :', "<@!347952125315252225> Time(s) Avalible : TBD Badge : TBD")
+			.addField('Doubles Fairy Gym Leader :', "<@!347952125315252225> Time(s) Avalible : Friday after 7PM EST, Saturday after 7PM EST \nBadge : <:emptyBadge:683491161717211147>")
 			// TheeMaxZee#4348 is fire 
-			.addField('Fire Gym Leader :', "<@!503486299030945803> Time(s) Avalible : TBD Badge : TBD")
+			.addField('Fire Gym Leader :', "<@!503486299030945803> Time(s) Avalible : Friday after 3PM EST \nBadge : <:emptyBadge:683491161717211147>")
 			// {Glitchfox}#4971 is dragon
-			.addField('Dragon Gym Leader :', "<@!472568934621511691> Time(s) Avalible : TBD Badge : TBD")
+			.addField('Dragon Gym Leader :', "<@!472568934621511691> Time(s) Avalible : Tuesday and Friday 1PM-9PM EST \nBadge : <:emptyBadge:683491161717211147>")
 			// Yujio#3923 is dark
-			.addField('Dark Gym Leader :', "<@!435551482851622924> Time(s) Avalible : TBD Badge : TBD")
+			.addField('Dark Gym Leader :', "<@!435551482851622924> Time(s) Avalible : Monday: 5:30-6:00PM EST\nTuesday: 4:30- 5:30PM EST\nWednesday: 5:30-6:00PM EST\nThursday: 6:30-7:00PM EST\nFriday: 6:30-7:00PM EST\n	Weekends: All day \nBadge : <:emptyBadge:683491161717211147>")
 			// freethoughtisalie#9132 is ice
-			.addField('Ice Gym Leader :', "<@!531698462643716106> Time(s) Avalible : TBD Badge : TBD");
+			.addField('Ice Gym Leader :', "<@!531698462643716106> Time(s) Avalible : Monday-Wednesday after 10PM EST \nBadge : <:emptyBadge:683491161717211147>");
 		return message.channel.send(gymInfoEmbeded);
 	}
 });
