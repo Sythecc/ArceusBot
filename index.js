@@ -195,21 +195,21 @@ client.on("message", message => {
 			.setTimestamp()
 			.setFooter('Created by Arceus#5253')
 			// CanaanTE#8564 the grass gym leader hasn’t responded to me
-			.addField('**Grass Gym Leader :**', "<@!355022839730012161> Time(s) Available :*\nAfter school weekdays\nFriday 6pm CT\nMidday Saturday*\nBadge : <:emptyBadge:683491161717211147>")
+			.addField('**Grass Gym Leader :**', "<@!355022839730012161> Time(s) Available :\n*After school weekdays*\n*Friday 6pm CT\n*Midday Saturday*\nBadge : <:emptyBadge:683491161717211147>")
 			// LordXbox420#4207 is bug 
-			.addField('**Bug Gym Leader :**', "<@!419671144912650260> Time(s) Available :*\nMonday-Friday 4PM-8:30PM PST*\nBadge : <:emptyBadge:683491161717211147>")
+			.addField('**Bug Gym Leader :**', "<@!419671144912650260> Time(s) Available :\n*Monday-Friday 4PM-8:30PM PST*\nBadge : <:emptyBadge:683491161717211147>")
 			// just here#5407 is doubles sandstorm
-			.addField('**Doubles Sandstorm Gym Leader :**', "<@!664187773955080203> Time(s) Available :*\nMonday after 3PM\nTuesday after 6PM\nThursday after 7PM\nFriday after 6:50PM\nSaturday after 4PM\nSunday after 4PM*\nBadge : <:emptyBadge:683491161717211147>")
+			.addField('**Doubles Sandstorm Gym Leader :**', "<@!664187773955080203> Time(s) Available :\n*Monday after 3PM*\n*Tuesday after 6PM*\n*Thursday after 7PM*\n*Friday after 6:50PM*\n*Saturday after 4PM*\n*Sunday after 4PM*\nBadge : <:emptyBadge:683491161717211147>")
 			// Skribblette:crescent_moon:#9523 is fairy 
-			.addField('**Doubles Fairy Gym Leader :**', "<@!347952125315252225> Time(s) Available :*\nFriday after 7PM EST\nSaturday after 7PM EST*\nBadge : <:emptyBadge:683491161717211147>")
+			.addField('**Doubles Fairy Gym Leader :**', "<@!347952125315252225> Time(s) Available :\n*Friday after 7PM EST*\n*Saturday after 7PM EST*\nBadge : <:emptyBadge:683491161717211147>")
 			// TheeMaxZee#4348 is fire 
-			.addField('**Fire Gym Leader :**', "<@!503486299030945803> Time(s) Available :*\nFriday after 3PM EST*\nBadge : <:emptyBadge:683491161717211147>")
+			.addField('**Fire Gym Leader :**', "<@!503486299030945803> Time(s) Available :\n*Friday after 3PM EST*\nBadge : <:emptyBadge:683491161717211147>")
 			// {Glitchfox}#4971 is dragon
-			.addField('**Dragon Gym Leader :**', "<@!472568934621511691> Time(s) Available :*\nTuesday and Saturday 1PM-9PM EST*\nBadge : <:emptyBadge:683491161717211147>")
+			.addField('**Dragon Gym Leader :**', "<@!472568934621511691> Time(s) Available :\n*Tuesday and Saturday 1PM-9PM EST*\nBadge : <:emptyBadge:683491161717211147>")
 			// Yujio#3923 is dark
-			.addField('**Dark Gym Leader :**', "<@!435551482851622924> Time(s) Available :*\nMonday: 5:30-6:00PM EST\nTuesday: 4:30- 5:30PM EST\nWednesday: 5:30-6:00PM EST\nThursday: 6:30-7:00PM EST\nFriday: 6:30-7:00PM EST\nWeekends: All day*\nBadge : <:emptyBadge:683491161717211147>")
+			.addField('**Dark Gym Leader :**', "<@!435551482851622924> Time(s) Available :\n*Monday: 5:30-6:00PM EST*\n*Tuesday: 4:30- 5:30PM EST*\n*Wednesday: 5:30-6:00PM EST*\n*Thursday: 6:30-7:00PM EST*\n*Friday: 6:30-7:00PM EST*\n*Weekends: All day*\nBadge : <:emptyBadge:683491161717211147>")
 			// freethoughtisalie#9132 is ice
-			.addField('**Ice Gym Leader :**', "<@!531698462643716106> Time(s) Available :*\nMonday-Wednesday after 10PM EST*\nBadge : <:emptyBadge:683491161717211147>");
+			.addField('**Ice Gym Leader :**', "<@!531698462643716106> Time(s) Available :\n*Monday-Wednesday after 10PM EST*\nBadge : <:emptyBadge:683491161717211147>");
 		return message.channel.send(gymInfoEmbeded);
 	}
 });
