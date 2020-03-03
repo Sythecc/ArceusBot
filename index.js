@@ -195,7 +195,7 @@ client.on("message", message => {
 			.setTimestamp()
 			.setFooter('Created by Arceus#5253')
 			// CanaanTE#8564 the grass gym leader hasn’t responded to me
-			.addField('**Grass Gym Leader :**', "<@!355022839730012161> Time(s) Available :\n*After school weekdays*\n*Friday 6pm CT\n*Midday Saturday*\nBadge : <:emptyBadge:683491161717211147>")
+			.addField('**Grass Gym Leader :**', "<@!355022839730012161> Time(s) Available :\n*After school weekdays*\n*Friday 6pm CT*\n*Midday Saturday*\nBadge : <:emptyBadge:683491161717211147>")
 			// LordXbox420#4207 is bug 
 			.addField('**Bug Gym Leader :**', "<@!419671144912650260> Time(s) Available :\n*Monday-Friday 4PM-8:30PM PST*\nBadge : <:emptyBadge:683491161717211147>")
 			// just here#5407 is doubles sandstorm
