@@ -207,7 +207,7 @@ client.on("message", message => {
 			// {Glitchfox}#4971 is dragon
 			.addField('Dragon Gym Leader :', "<@!472568934621511691> Time(s) Available :\nTuesday and Saturday 1PM-9PM EST\nBadge : <:emptyBadge:683491161717211147>")
 			// Yujio#3923 is dark
-			.addField('Dark Gym Leader :', "<@!435551482851622924> Time(s) Available :\nMonday: 5:30-6:00PM EST\nTuesday: 4:30- 5:30PM EST\nWednesday: 5:30-6:00PM EST\nThursday: 6:30-7:00PM EST\nFriday: 6:30-7:00PM EST\n	Weekends: All day \nBadge : <:emptyBadge:683491161717211147>")
+			.addField('Dark Gym Leader :', "<@!435551482851622924> Time(s) Available :\nMonday: 5:30-6:00PM EST\nTuesday: 4:30- 5:30PM EST\nWednesday: 5:30-6:00PM EST\nThursday: 6:30-7:00PM EST\nFriday: 6:30-7:00PM EST\nWeekends: All day \nBadge : <:emptyBadge:683491161717211147>")
 			// freethoughtisalie#9132 is ice
 			.addField('Ice Gym Leader :', "<@!531698462643716106> Time(s) Available :\nMonday-Wednesday after 10PM EST\nBadge : <:emptyBadge:683491161717211147>");
 		return message.channel.send(gymInfoEmbeded);
